@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using OrbusDevTest.DataAccess.Models;
 using OrbusDevTest.DataAccess;
+using System.Threading.Tasks;
+using RestSharp;
 
 namespace OrbusDevTest.Controllers
 {
@@ -32,7 +34,7 @@ namespace OrbusDevTest.Controllers
             // TODO: Get product (Create details view)
             return View();
         }
-
+        
         //
         // GET: /Product/Edit/5
         public ActionResult Edit(int id)

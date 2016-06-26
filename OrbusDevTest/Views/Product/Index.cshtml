@@ -4,37 +4,44 @@
 }
 <h3>Products Page</h3>
 <hr>
-<div style="float: left">
-    <label>Category</label>
-    <select id="category">
-        <option></option>
-    </select>
-</div>
-<div style="float: left;margin-left: 10px">
-    <label>Sub Category</label>
-    <select id="subcategory">
-        <option></option>
-    </select>
-</div>
-<div style="float: left; margin-left: 10px">
-    <label>Min Stock</label>
-    <input id="minstock" type="number" value="500" step="100" />
-</div>
-<div style="clear: both"></div>
-<hr>
-
-@Scripts.Render("~/bundles/knockout")
-@Scripts.Render("~/bundles/app")
+<div id="productPage">
+    <div  style="float: left">
+        <label>Category</label>
+        <select id="category" data-bind='foreach: Categories'>
+            <option data-bind='text: Name'></option>
+        </select>
+    </div>
+    <div style="float: left;margin-left: 10px">
+        <label>Sub Category</label>
+        <select id="subcategory" data-bind='foreach: SubCategories'>
+            <option data-bind='text: Name'></option>
+        </select>
+    </div>
+    <div style="float: left; margin-left: 10px">
+        <label>Min Stock</label>
+        <input id="minstock" type="number" value="500" step="100" />
+    </div>
+    <div style="clear: both"></div>
+    @Html.Partial("~/views/product/ProductsPartial.cshtml", Model)
 
 @Html.Partial("~/views/product/ProductsPartial.cshtml", Model)
+
+</div>
+<hr>
+
+@Scripts.Render("~/bundles/app")
+
 
 @section Scripts {
     <script type="text/javascript">
         
         var productList = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(jsonProducts))';
         var model = new ProductModel(productList);
-        var dom = $("#producttablebody")[0];
+        var dom = $("#productPage")[0];
 
         ko.applyBindings(model, dom);
+
+        model.LoadCategories();
+        
     </script>
 }

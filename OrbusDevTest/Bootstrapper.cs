@@ -5,11 +5,14 @@ using OrbusDevTest.DataAccess;
 using OrbusDevTest.DataAccess.Category;
 using WebService;
 using OrbusDevTest.DataAccess.OAService;
+using System;
 
 namespace OrbusDevTest
 {
     public static class Bootstrapper
     {
+        private static IUnityContainer container;
+
         public static void Initialise()
         {
             var container = BuildUnityContainer();
@@ -17,9 +20,14 @@ namespace OrbusDevTest
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
 
+        internal static T Resolve<T>() where T : class
+        {
+            return (T)container.Resolve(typeof(T));
+        }
+
         private static IUnityContainer BuildUnityContainer()
         {
-            var container = new UnityContainer();
+            container = new UnityContainer();
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers

@@ -9,17 +9,17 @@ namespace OrbusDevTest.Api
     {
         ICategoryRepository _repository;
 
-        public CategoryController(ICategoryRepository categoryRepository)
+        public CategoryController()
         {
-            _repository = categoryRepository;
+            _repository = Bootstrapper.Resolve<CategoryRepository>();
         }
-
         // GET api/Category
         public IEnumerable<Category> Get()
         {
             return _repository.GetCategories();
         }
 
+        [ActionName("GetSubCategories")]
         // GET api/Category/GetSubCategories/5
         public IEnumerable<Category> GetSubCategories(int categoryId)
         {
