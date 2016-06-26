@@ -9,9 +9,9 @@ namespace OrbusDevTest.Angular.Api
     {
         ICategoryRepository _repository;
 
-        public CategoryController()
+        public CategoryController(ICategoryRepository repository)
         {
-            _repository = new CategoryRepository();
+            _repository = repository;
         }
 
         // GET api/Category
