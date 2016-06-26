@@ -1,11 +1,20 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using OrbusDevTest.DataAccess.Models;
+using OrbusDevTest.DataAccess.OAService;
 
 namespace OrbusDevTest.DataAccess
 {
     public class ProductRepository : IProductRepository
     {
+        private IOAService oAService;
+
+        public ProductRepository(IOAService oAService)
+        {
+            this.oAService = oAService;
+        }
+
         // TODO: Include OAService, this will allow you to query the webservice
 
         /*
@@ -23,7 +32,17 @@ namespace OrbusDevTest.DataAccess
         {
             // TODO: Get Products from OAService and map (see mapping above) to the Product client Model
             // (Return only 100 results)
-            throw new NotImplementedException();
+            var dimProducts = oAService.GetProducts().Take(100);
+
+            var products = (from p in dimProducts
+                            select new Product()
+                            {
+                                Name = p.ModelName,
+                                ProductKey = p.ProductKey,
+                                StockLevel = p.SafetyStockLevel
+                            }).ToList();
+
+            return products;
         }
 
         public Product GetProduct(int id)

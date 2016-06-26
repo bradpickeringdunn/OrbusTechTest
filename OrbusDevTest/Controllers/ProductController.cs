@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Web.Mvc;
 using OrbusDevTest.DataAccess.Models;
+using OrbusDevTest.DataAccess;
 
 namespace OrbusDevTest.Controllers
 {
     public class ProductController : Controller
     {
+        private IProductRepository _productRepository;
+
         // TODO: Implement IProductRepository to interact with the repository
-        
+        public ProductController(IProductRepository productRepository)
+        {
+            this._productRepository = productRepository;
+        }
         //
         // GET: /Product/
         public ActionResult Index()

@@ -10,9 +10,9 @@ namespace OrbusDevTest.Angular.Api
     {
         IProductRepository _repository;
 
-        public ProductController()
+        public ProductController(IProductRepository productRepository)
         {
-            _repository = new ProductRepository();
+            _repository = productRepository;
         }
 
         // GET api/Product/GetProductListBySubCategory/3
