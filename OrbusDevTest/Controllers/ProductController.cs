@@ -18,14 +18,17 @@ namespace OrbusDevTest.Controllers
         // GET: /Product/
         public ActionResult Index()
         {
+            var products = _productRepository.GetProducts();
             // TODO: Get products (This view already exists)
-            return View();
+            return View(products);
         }
 
         //
         // GET: /Product/Details/5
         public ActionResult Details(int id)
         {
+            var products = _productRepository.GetProducts();
+
             // TODO: Get product (Create details view)
             return View();
         }
@@ -34,6 +37,8 @@ namespace OrbusDevTest.Controllers
         // GET: /Product/Edit/5
         public ActionResult Edit(int id)
         {
+            var product = _productRepository.GetProducts();
+
             // TODO: Get productto update (Create edit view)
             return View();
         }
@@ -46,6 +51,7 @@ namespace OrbusDevTest.Controllers
             try
             {
                 // TODO: Update product to OAServer
+                var updatedProduct = _productRepository.UpdateProduct(product);
 
                 return RedirectToAction("Index");
             }
@@ -59,8 +65,10 @@ namespace OrbusDevTest.Controllers
         // GET: /Product list
         public ActionResult GetProductListBySubCategory(int subCategoryId)
         {
+            var product = _productRepository.GetProductsBySubCateogoryId(subCategoryId);
+
+            return View(product);
             // TODO: Get filtered products list
-            throw new NotImplementedException();
         }
     }
 }

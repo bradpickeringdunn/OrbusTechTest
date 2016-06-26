@@ -47,20 +47,49 @@ namespace OrbusDevTest.DataAccess
 
         public Product GetProduct(int id)
         {
+            var dimProduct = oAService.GetProduct(id);
+
+            return new Product()
+            {
+                Name = dimProduct.EnglishProductName,
+                ProductKey = dimProduct.ProductKey,
+                StockLevel = dimProduct.SafetyStockLevel
+            };
             // TODO: Get Product from OAService and map (see mapping above) to the Product client Model
-            throw new NotImplementedException();
+
         }
 
         public bool UpdateProduct(Product product)
         {
+            var dimProduct = new DimProduct()
+            {
+                ProductKey = product.ProductKey,
+                EnglishProductName = product.Name,
+                SafetyStockLevel = product.StockLevel
+            };
+
+            var result = oAService.UpdateProduct(dimProduct);
+
+            return result > 0;
             // TODO: Update Product (Name and StockLevel properties only) and map To DimProduct (OAServer class) (see mapping above)
-            throw new NotImplementedException();
+            
         }
 
         public IEnumerable<Product> GetProductsBySubCateogoryId(int subCategoryId)
         {
             // TODO: Get Products from OAService filtered by sub category id and map (see mapping above) to the Product client Model (OAServer method: GetProductsbySubCategoryId)
-            throw new NotImplementedException();
+            var dimProducts = oAService.GetProductsbySubCategoryId(subCategoryId);
+
+            var products = (from p in dimProducts
+                            select new Product()
+                            {
+                                Name = p.ModelName,
+                                ProductKey = p.ProductKey,
+                                StockLevel = p.SafetyStockLevel
+                            }).ToList();
+
+            return products;
+
         }
     }
 }
