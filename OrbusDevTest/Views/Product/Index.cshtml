@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OrbusDevTest.DataAccess.Models.Product>
+
+<h3>Products Page</h3>
+<hr>
+<div style="float: left">
+    <label>Category</label>
+    <select id="category">
+        <option></option>
+    </select>
+</div>
+<div style="float: left;margin-left: 10px">
+    <label>Sub Category</label>
+    <select id="subcategory">
+        <option></option>
+    </select>
+</div>
+<div style="float: left; margin-left: 10px">
+    <label>Min Stock</label>
+    <input id="minstock" type="number" value="500" step="100" />
+</div>
+<div style="clear: both"></div>
+<hr>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockLevel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="producttablebody">
+        @* TODO: List of products *@
+    </tbody>
+</table>
+
+@section Scripts {
+    <script type="text/javascript">
+
+    </script>
+}

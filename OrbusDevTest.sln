@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbusDevTest", "OrbusDevTest\OrbusDevTest.csproj", "{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE} = {61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbusDevTest.Angular", "OrbusDevTest.Angular\OrbusDevTest.Angular.csproj", "{BD2B851D-DCA9-456C-952F-3ABC726CE9D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbusDevTest.DataAccess", "OrbusDevTest.Repository\OrbusDevTest.DataAccess.csproj", "{B6A2276A-ADB7-4226-88BB-28301BE737AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE} = {61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DB5B86-CAF8-46EF-A45E-58AE02CD50AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2B851D-DCA9-456C-952F-3ABC726CE9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2B851D-DCA9-456C-952F-3ABC726CE9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2B851D-DCA9-456C-952F-3ABC726CE9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2B851D-DCA9-456C-952F-3ABC726CE9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A2276A-ADB7-4226-88BB-28301BE737AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A2276A-ADB7-4226-88BB-28301BE737AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A2276A-ADB7-4226-88BB-28301BE737AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A2276A-ADB7-4226-88BB-28301BE737AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://orbus-tfs:8080/tfs/office%20architect
+		SccProjectUniqueName0 = OrbusDevTest\\OrbusDevTest.csproj
+		SccProjectName0 = OrbusDevTest
+		SccLocalPath0 = OrbusDevTest
+		SccProjectUniqueName1 = WebService\\WebService.csproj
+		SccProjectName1 = WebService
+		SccLocalPath1 = WebService
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = OrbusDevTest.Angular\\OrbusDevTest.Angular.csproj
+		SccProjectName3 = OrbusDevTest.Angular
+		SccLocalPath3 = OrbusDevTest.Angular
+		SccProjectUniqueName4 = OrbusDevTest.Repository\\OrbusDevTest.DataAccess.csproj
+		SccProjectName4 = OrbusDevTest.Repository
+		SccLocalPath4 = OrbusDevTest.Repository
+	EndGlobalSection
+EndGlobal

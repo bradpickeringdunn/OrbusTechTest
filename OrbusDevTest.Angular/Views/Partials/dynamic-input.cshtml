@@ -1,0 +1,9 @@
+﻿<div>
+    <label for="{{config.id}}">{{config.label}}</label>
+    <div ng-switch="config.type">
+        <input ng-switch-when="text" id="{{config.id}}" type="text" ng-model="$parent.model" />
+        <input ng-switch-when="number" id="{{config.id}}" type="number" step="{{config.step}}" ng-model="$parent.model" />
+        <select ng-switch-when="select" id="{{config.id}}" ng-model="$parent.model" ng-options="opt.id as opt.label for opt in config.options">
+        </select>
+    </div>
+</div>
