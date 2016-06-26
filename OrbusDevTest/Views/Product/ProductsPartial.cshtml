@@ -1,0 +1,27 @@
+﻿@model IEnumerable<OrbusDevTest.DataAccess.Models.Product>
+
+<table id="productTable" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockLevel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="producttablebody" data-bind='foreach: products'>
+        <tr>
+            <td data-bind='text: Name'></td>
+            <td data-bind='text: ProductKey'></td>
+            <td data-bind='text: StockLevel'></td>
+        </tr>
+    </tbody>
+</table>
+
+

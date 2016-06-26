@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<OrbusDevTest.DataAccess.Models.Product>
-
+@{
+    var jsonProducts = Model;
+}
 <h3>Products Page</h3>
 <hr>
 <div style="float: left">
@@ -20,28 +22,19 @@
 </div>
 <div style="clear: both"></div>
 <hr>
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StockLevel)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="producttablebody">
-        @* TODO: List of products *@
-    </tbody>
-</table>
+
+@Scripts.Render("~/bundles/knockout")
+@Scripts.Render("~/bundles/app")
+
+@Html.Partial("~/views/product/ProductsPartial.cshtml", Model)
 
 @section Scripts {
     <script type="text/javascript">
+        
+        var productList = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(jsonProducts))';
+        var model = new ProductModel(productList);
+        var dom = $("#producttablebody")[0];
 
+        ko.applyBindings(model, dom);
     </script>
 }

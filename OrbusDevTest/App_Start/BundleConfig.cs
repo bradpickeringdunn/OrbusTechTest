@@ -16,6 +16,12 @@ namespace OrbusDevTest
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/knockout")
+                .Include("~/Scripts/knockout-3.4.0*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/Scripts/app/ProductModel*"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
