@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbusDevTest", "OrbusDevTest\OrbusDevTest.csproj", "{8E23ACD8-34F3-40FC-A1BF-EA96688BFC4A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -43,22 +43,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://orbus-tfs:8080/tfs/office%20architect
-		SccProjectUniqueName0 = OrbusDevTest\\OrbusDevTest.csproj
-		SccProjectName0 = OrbusDevTest
-		SccLocalPath0 = OrbusDevTest
-		SccProjectUniqueName1 = WebService\\WebService.csproj
-		SccProjectName1 = WebService
-		SccLocalPath1 = WebService
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = OrbusDevTest.Angular\\OrbusDevTest.Angular.csproj
-		SccProjectName3 = OrbusDevTest.Angular
-		SccLocalPath3 = OrbusDevTest.Angular
-		SccProjectUniqueName4 = OrbusDevTest.Repository\\OrbusDevTest.DataAccess.csproj
-		SccProjectName4 = OrbusDevTest.Repository
-		SccLocalPath4 = OrbusDevTest.Repository
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal
